@@ -4,10 +4,9 @@
 
 <h1>Countdown Timer</h1>
 
-<form id="input">
-Date: <input type="text" name="date"><br>
-Time: <input type="text" name="time"><br><br>
-<input type="button" onclick="myFunction()" value="Submit">
+<form>
+Date: <input type="datetime-local" id="date"><br>
+<input type="submit" onclick="myFunction()" value="Submit">
 </form>
 
 </body>
@@ -20,11 +19,24 @@ Time: <input type="text" name="time"><br><br>
 // Set the date we're counting down to
 
 function myFunction() {
-  document.getElementById("input").submit();
+  //var date=document.getElementById("form").submit();
+  //console.log(date); 
+  //var time=document.getElementById("time").submit();
+  //var datetime = document.getElementById("form").submit();
+  
+  
+  //console.log(datetime); 
+  //var string = String(datetime); 
+  //console.log(string); 
+  //var date_time = new Date(string); 
+  var dateControl = document.querySelector('input[type="datetime-local"]');
+  return document.getElementById("form").submit();
 }
 
-var Countdown_Date = myFunction();
-var countDownDate = new Countdown_Date.getTime();
+var Countdown_Date = new Date(myFunction());
+console.log(Countdown_Date); 
+var countDownDate = Countdown_Date.getTime();
+console.log(countDownDate); 
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -52,5 +64,3 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-
-
